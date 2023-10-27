@@ -6,6 +6,16 @@ from sklearn.metrics import f1_score, accuracy_score, precision_score, recall_sc
 
 
 def plot_line(hist_df):
+    """
+    
+    Plots lineplot.
+    Args:
+        hist_df: The history of training.
+    Returns:
+        None.
+        
+    """
+
     fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(12,4))
     sns.lineplot(data=hist_df[['train_loss', 'validation_loss']], ax=ax[0])
     sns.lineplot(data=hist_df[['train_acc', 'validation_acc']], ax=ax[1])
